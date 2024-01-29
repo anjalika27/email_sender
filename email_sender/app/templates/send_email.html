@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block base %}
+
+<h3 style="text-align: center;font-size: xxx-large;font-weight: bold;margin: 2%;">Send email</h3>
+<div class="container mt-5">
+
+    <form method="POST" class="col-6 mx-auto card p-3 shadow-lg">
+        {% csrf_token %}
+        <!-- <div class="form-group" style="margin-top: 1%;"> -->
+            <label for="to_email">To:</label>
+            <input type="email" name="to_email" class="form-control" required><br>
+        <!-- </div> -->
+        <label for="subject">Subject:</label>
+        <input type="text" name="subject" required class="form-control"><br>
+        <label for="message">Message:</label>
+        <textarea name="message" required class="form-control"></textarea><br>
+        <button type="submit" class="btn btn-primary">Send Email</button>
+    </form>
+
+</div>
+
+{% endblock %}
